@@ -85,6 +85,7 @@ ExternalProject_Add(
     --enable-nvenc
     --enable-runtime-cpudetect
     --enable-openssl
+    "--extra-cxxflags='-include system_error'"
     "--extra-libs='-lstdc++ -lpthread'" # libplacebo/shaderc
   BUILD_COMMAND ${MAKE}
   INSTALL_COMMAND ""
