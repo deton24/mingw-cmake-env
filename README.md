@@ -3,7 +3,7 @@ The fork is modified to build it in Actions on GH, and then attach in Releases.
 
 Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)
 
-It has only deleted fdk-aac (so it's redistributable) and non-FFmpeg stuff. 
+It has only deleted fdk-aac (so it's redistributable) and non-FFmpeg stuff (and no external video codecs/filter is separate packages). 
 
 So this forked repository doesn't store ffmpeg source code, it has only modifications to build specific commit of librempeg repo.
 It was made, because the rorgoroth/mingw-cmake-env repo automatically overwrites old builds in releases, and old actions are also deleted.
