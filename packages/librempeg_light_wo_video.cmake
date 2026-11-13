@@ -1,5 +1,5 @@
 ExternalProject_Add(
-  librempeg
+  librempeg_light_wo_video
   DEPENDS bzip2
           lame
           opus
@@ -47,11 +47,11 @@ ExternalProject_Add(
   LOG_INSTALL 1)
 
 ExternalProject_Add_Step(
-  librempeg copy-binary
+  librempeg_light_wo_video copy-binary
   DEPENDEES install
   COMMAND
     ${CMAKE_COMMAND} -E copy
     <BINARY_DIR>/ffmpeg.exe
-    ${CMAKE_CURRENT_BINARY_DIR}/librempeg-package/ffmpeg.exe)
+    ${CMAKE_CURRENT_BINARY_DIR}/librempeg_light_wo_video-package/ffmpeg.exe)
 
 force_rebuild_git(librempeg)
