@@ -31,7 +31,7 @@ ExternalProject_Add(
           x265
           zlib
   GIT_REPOSITORY https://github.com/librempeg/librempeg.git
-  GIT_TAG 0ada1735571528a47634d19d213d28eb49e01285
+  GIT_TAG bbb42146c
   UPDATE_COMMAND ""
   CONFIGURE_COMMAND
     ${EXEC} <SOURCE_DIR>/configure
@@ -51,7 +51,6 @@ ExternalProject_Add(
     --disable-manpages
     --disable-podpages
     --disable-txtpages
-    --disable-unstable
     --disable-vaapi
     --disable-vdpau
     --disable-videotoolbox
