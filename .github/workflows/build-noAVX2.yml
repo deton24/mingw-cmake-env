@@ -64,7 +64,7 @@ jobs:
           path: bin/librempeg-package
 
       - name: Delete Last Release
-        run: gh release delete no-avx2 --cleanup-tag || true
+        run: gh release delete no-avx2-2026 --cleanup-tag || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -77,8 +77,8 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: bin/{*.7z,SHA256SUMS}
-          tag: no-avx2
-          release_name: no-avx2
+          tag: no-avx2-2026
+          release_name: no-avx2-2026
           overwrite: true
           file_glob: true
           draft: false
