@@ -1,4 +1,4 @@
-name: build-light
+name: build-light-noAVX2
 on:
   workflow_dispatch:
 
