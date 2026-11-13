@@ -198,6 +198,7 @@ list(
   sdl2-compat
   spirv-headers
   librempeg
+  librempeg_light_wo_video
   ffmpeg
   mujs
   mpv
