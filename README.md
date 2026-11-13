@@ -1,3 +1,6 @@
+In Actions there should be artefact built for AVX2 CPUs and Windows x64 with the last commit supporting ardftsrc before it was deleted from librempeg (it has only deleted fdk-aac so it's redistributable).
+
+_______________
 # About
 
 This is a stripped down version of [shinchiro/mpv-winbuild-cmake](https://github.com/shinchiro/mpv-winbuild-cmake).
