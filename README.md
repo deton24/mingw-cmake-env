@@ -1,16 +1,18 @@
-The last commit [0ada1735571528a47634d19d213d28eb49e01285](https://github.com/librempeg/librempeg/commit/0ada1735571528a47634d19d213d28eb49e01285) before ardftsrc was deleted in [ac8be5eec3153c6ef49c734bdebcd7ba05db2188](https://github.com/librempeg/librempeg/commit/ac8be5eec3153c6ef49c734bdebcd7ba05db2188).
+The last 2026 commit [0ada1735571528a47634d19d213d28eb49e01285](https://github.com/librempeg/librempeg/commit/0ada1735571528a47634d19d213d28eb49e01285) before ardftsrc was deleted in [ac8be5eec3153c6ef49c734bdebcd7ba05db2188](https://github.com/librempeg/librempeg/commit/ac8be5eec3153c6ef49c734bdebcd7ba05db2188).
 The fork is modified to build it in Actions on GH, and then attach in Releases.
 
-Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)
+Download the from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)<br>
 
-It has only deleted fdk-aac (so it's redistributable) and non-FFmpeg stuff (and no external video codecs/filter is separate packages). 
+The commit from 2026 consumes more memory than the one from 2025 ([more](https://github.com/deton24/mingw-cmake-env/tree/low-memory-2025)).
+
+It has only deleted fdk-aac (so it's redistributable) and non-FFmpeg stuff (and no external video codecs/filter in separate packages). 
 
 So this forked repository doesn't store ffmpeg source code, it has only modifications to build specific commit of librempeg repo.
 It was made, because the rorgoroth/mingw-cmake-env repo automatically overwrites old builds in releases, and old actions are also deleted.
 
 In Actons workflows you also have non-AVX2 option to possible build if you fork this repo. The light workflow has no external video codecs/filters (so it compiles faster, but demuxing audio from video files should still work). Only the main full workflow "build" replaces itself in releases after creating a new artefact. Non-AVX2 builds will probably have similar performance with:
 
-Very high resampler settings (like those top ones on hydrogenaudio src chart), precisely this one:
+Very high resampler settings (like those top ones on Hydrogenaudio src chart), precisely this one:
 
 <code>ffmpeg -i "C:\input64_88_96or48.wav" -af asf2sf=dblp,ardftsrc=44100:quality=61656210:bandwidth=0.9941249 -c:a pcm_f32le C:\output44.wav<code>
 
