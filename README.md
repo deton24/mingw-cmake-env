@@ -8,7 +8,9 @@ It has only deleted fdk-aac (so it's redistributable) and non-Fffmpeg stuff.
 So this forked repository doesn't store ffmpeg source code, it has only modifications to build specific commmit of librempeg repo.
 It was made, because the rorgoroth/mingw-cmake-env repo automatically overwrites old builds in releases, and old actions are also deleted.
 
-In Actons workflows you also have non-AVX2 option to possible build if you fork this repo. The light workflow has no video filters supported (it compiles faster, but demuxing audio from video files should still work). Non-AVX2 builds will probably have similar performance with very high settings like those on hydrogenaudio src chart, precisely:
+In Actons workflows you also have non-AVX2 option to possible build if you fork this repo. The light workflow has no video filters supported (it compiles faster, but demuxing audio from video files should still work). Non-AVX2 builds will probably have similar performance with:
+
+Very high resampler settings (like those top ones on hydrogenaudio src chart), precisely this one:
 
 ffmpeg -i "C:\input64_88_96or48.wav" -af asf2sf=dblp,ardftsrc=44100:quality=61656210:bandwidth=0.9941249 -c:a pcm_f32le C:\output44.wav
 
