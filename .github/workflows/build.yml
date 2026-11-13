@@ -1,12 +1,12 @@
 name: build
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v6
 
@@ -25,72 +25,16 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
         shell: alpine.sh --root {0}
 
-      - name: Load Cached Build
-        uses: actions/cache/restore@main
-        with:
-          path: build
-          key: cached_build
-
-      - name: Load Cached LTO Cache
-        uses: actions/cache/restore@main
-        with:
-          path: build/install/x86_64-w64-mingw32/ltocache
-          key: ltocache
-
-      - name: Load Cached CCache
-        uses: actions/cache/restore@main
-        with:
-          path: build/install/x86_64-w64-mingw32/ccache
-          key: ccache
-
       - name: Setup CMake
         run: |
           cmake -Bbuild -G Ninja -DCPUTUNE=x86-64-v3 -DOPTIM=O2
         shell: alpine.sh {0}
 
-      - name: Run Update
-        run: |
-          ninja -C build update
-          ninja -j 10 -C build fetch
-        shell: alpine.sh {0}
-
       - name: Run Build
         run: |
           ninja -C build llvm
-          ninja -C build quake3e
-          ninja -C build quake3e-urbanterror
-          ninja -C build xonotic
           ninja -C build librempeg
-          ninja -C build ffmpeg
-          ninja -C build mpv
         shell: alpine.sh {0}
-
-      - name: Clear GH Caches
-        uses: easimon/wipe-cache@main
-
-      - name: Save LTO Cache.
-        uses: actions/cache/save@main
-        with:
-          path: build/install/x86_64-w64-mingw32/ltocache
-          key: ltocache
-
-      - name: Save CCache
-        uses: actions/cache/save@main
-        with:
-          path: build/install/x86_64-w64-mingw32/ccache
-          key: ccache
-
-      - name: Clean Build Cache
-        run: |
-          bash -c "rm -rf build/install/x86_64-w64-mingw32/ltocache"
-          bash -c "rm -rf build/install/x86_64-w64-mingw32/ccache"
-        shell: alpine.sh {0}
-
-      - name: Save Build Cache
-        uses: actions/cache/save@main
-        with:
-          path: build
-          key: cached_build
 
       - name: Run Packaging
         run: |
@@ -113,47 +57,11 @@ jobs:
           name: build-logs
           path: logs/
 
-      - name: Upload ffmpeg-full Package
-        uses: actions/upload-artifact@v7
-        with:
-          name: ffmpeg-full
-          path: bin/ffmpeg-full-package
-
-      - name: Upload ffmpeg Package
-        uses: actions/upload-artifact@v7
-        with:
-          name: ffmpeg
-          path: bin/ffmpeg-package
-
       - name: Upload librempeg Package
         uses: actions/upload-artifact@v7
         with:
           name: librempeg
           path: bin/librempeg-package
-
-      - name: Upload mpv Package
-        uses: actions/upload-artifact@v7
-        with:
-          name: mpv
-          path: bin/mpv-package
-
-      - name: Upload quake3e Package
-        uses: actions/upload-artifact@v7
-        with:
-          name: quake3e
-          path: bin/quake3e-package
-
-      - name: Upload quake3e-urbanterror Package
-        uses: actions/upload-artifact@v7
-        with:
-          name: quake3e-urbanterror
-          path: bin/quake3e-urbanterror-package
-
-      - name: Upload xonotic Package
-        uses: actions/upload-artifact@v7
-        with:
-          name: xonotic
-          path: bin/xonotic-package
 
       - name: Delete Last Release
         run: gh release delete latest --cleanup-tag || true
