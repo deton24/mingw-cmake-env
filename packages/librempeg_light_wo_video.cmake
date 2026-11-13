@@ -30,6 +30,7 @@ ExternalProject_Add(
     --disable-vdpau
     --disable-videotoolbox
     --disable-vulkan
+    --disable-filter=gfxcapture
     --enable-agpl --enable-gpl --enable-version3
     --enable-cross-compile
     --enable-ffmpeg
