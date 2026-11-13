@@ -12,7 +12,7 @@ In Actons workflows you also have non-AVX2 option to possible build if you fork 
 
 Very high resampler settings (like those top ones on hydrogenaudio src chart), precisely this one:
 
-ffmpeg -i "C:\input64_88_96or48.wav" -af asf2sf=dblp,ardftsrc=44100:quality=61656210:bandwidth=0.9941249 -c:a pcm_f32le C:\output44.wav
+<code>ffmpeg -i "C:\input64_88_96or48.wav" -af asf2sf=dblp,ardftsrc=44100:quality=61656210:bandwidth=0.9941249 -c:a pcm_f32le C:\output44.wav<code>
 
 Forked repo readme follows.
 _______________
