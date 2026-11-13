@@ -1,5 +1,7 @@
 In Actions there should be artefact built for AVX2 CPUs and Windows x64 with the last commit supporting ardftsrc before it was deleted from librempeg (it has only deleted fdk-aac so it's redistributable) which automatically adds itself to releases, so the artefact won't go offline. This forked repository doesn't store ffmpeg source code, it has only modifications to build specific commmit of librempeg. Forked repo readme  follows.
 
+Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)
+
 _______________
 # About
 
