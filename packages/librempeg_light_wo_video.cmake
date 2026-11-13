@@ -4,6 +4,7 @@ ExternalProject_Add(
           lame
           opus
           vorbis
+          zlib
   GIT_REPOSITORY https://github.com/librempeg/librempeg.git
   GIT_TAG bbb42146c
   UPDATE_COMMAND ""
