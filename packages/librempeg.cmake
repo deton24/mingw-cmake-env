@@ -4,7 +4,6 @@ ExternalProject_Add(
           aom
           bzip2
           dav1d
-          fdk-aac
           flac
           fontconfig
           harfbuzz
@@ -56,7 +55,7 @@ ExternalProject_Add(
     --disable-vdpau
     --disable-videotoolbox
     --disable-vulkan
-    --enable-agpl --enable-gpl --enable-version3 --enable-nonfree
+    --enable-agpl --enable-gpl --enable-version3
     --enable-amf
     --enable-cross-compile
     --enable-ffmpeg
@@ -65,7 +64,6 @@ ExternalProject_Add(
     --enable-libaom
     --enable-libass
     --enable-libdav1d
-    --enable-libfdk-aac
     --enable-libfontconfig
     --enable-libharfbuzz
     --enable-libjxl
