@@ -52,7 +52,7 @@ package() {
 archive() {
   echo "Creating archives..."
 
-  PACKAGES="ffmpeg ffmpeg-full librempeg librempeg_light_wo_video mpv quake3e quake3e-urbanterror xonotic"
+  PACKAGES="${PACKAGES:-ffmpeg ffmpeg-full librempeg librempeg_light_wo_video mpv quake3e quake3e-urbanterror xonotic}"
 
   for pkg in $PACKAGES; do
     pkg_dir="${pkg}-package"
