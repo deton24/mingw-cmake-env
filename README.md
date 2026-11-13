@@ -1,8 +1,14 @@
-In Actions there should be artefact built for AVX2 CPUs and Windows x64 with the last commit supporting ardftsrc before it was deleted from librempeg (it has only deleted fdk-aac so it's redistributable and non-Fffmpeg stuff) which automatically adds itself to releases, so the artefact won't go offline. This forked repository doesn't store ffmpeg source code, it has only modifications to build specific commmit of librempeg. 
+The last commit before ardftsrc was deleted (0ada1735571528a47634d19d213d28eb49e01285).
+The fork is modified to build it in Actions on GH, and then attach in Releases.
 
 Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)
 
-In Actons workflows you ahave non-AVX2 option to possible build if you fork this repo. The light workflow has no video filters supported (it compiles faster, but demuxing audio from video files should still work). Non-AVX2 builds will probably have similar performance with very high settings like those on hydrogenaudio src chart.
+It has only deleted fdk-aac (so it's redistributable) and non-Fffmpeg stuff. 
+So this forked repository doesn't store ffmpeg source code, it has only modifications to build specific commmit of librempeg repo.
+
+In Actons workflows you also have non-AVX2 option to possible build if you fork this repo. The light workflow has no video filters supported (it compiles faster, but demuxing audio from video files should still work). Non-AVX2 builds will probably have similar performance with very high settings like those on hydrogenaudio src chart, precisely:
+
+ffmpeg -i "C:\input64_88_96or48.wav" -af asf2sf=dblp,ardftsrc=44100:quality=61656210:bandwidth=0.9941249 -c:a pcm_f32le C:\output44.wav
 
 Forked repo readme follows.
 _______________
