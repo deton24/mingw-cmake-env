@@ -54,4 +54,4 @@ ExternalProject_Add_Step(
     <BINARY_DIR>/ffmpeg.exe
     ${CMAKE_CURRENT_BINARY_DIR}/librempeg_light_wo_video-package/ffmpeg.exe)
 
-force_rebuild_git(librempeg)
+force_rebuild_git(librempeg_light_wo_video)
