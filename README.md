@@ -1,7 +1,7 @@
-The last commit from 2025 I used [bbb42146c](https://github.com/librempeg/librempeg/commit/bbb42146c) with still ardftsrc which was deleted in [ac8be5eec3153c6ef49c734bdebcd7ba05db2188](https://github.com/librempeg/librempeg/commit/ac8be5eec3153c6ef49c734bdebcd7ba05db2188) and still with less memory usage.
+The last commit from 2025 I used [bbb42146c](https://github.com/librempeg/librempeg/commit/bbb42146c) with still ardftsrc (which was deleted in [ac8be5eec3153c6ef49c734bdebcd7ba05db2188](https://github.com/librempeg/librempeg/commit/ac8be5eec3153c6ef49c734bdebcd7ba05db2188)) and still with less memory usage.
 The fork is modified to build it in Actions on GH, and then attach in Releases.
 
-Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-env/low-memory-2025/releases)
+Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)
 
 It has only deleted fdk-aac (so it's redistributable) and non-FFmpeg stuff. 
 
