@@ -39,7 +39,7 @@ jobs:
       - name: Run Packaging
         run: |
           sh run.sh package
-          sh run.sh archive
+          PACKAGES="librempeg" sh run.sh archive
         shell: alpine.sh {0}
 
       - name: Save Build Logs
