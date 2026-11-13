@@ -31,7 +31,6 @@ ExternalProject_Add(
           x264
           x265
   GIT_REPOSITORY https://github.com/librempeg/librempeg.git
-  GIT_TAG 0ada1735571528a47634d19d213d28eb49e01285
   
   UPDATE_COMMAND ""
   CONFIGURE_COMMAND
