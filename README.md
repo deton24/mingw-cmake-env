@@ -2,7 +2,7 @@ In Actions there should be artefact built for AVX2 CPUs and Windows x64 with the
 
 Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)
 
-In Actons workflows you ahave non-AVX2 option to possible build if you fork this repo. 
+In Actons workflows you ahave non-AVX2 option to possible build if you fork this repo. The light workflow has no video filters supported (it compiles faster, but demuxing audio from video files should still work). Non-AVX2 builds will probably have similar performance with very high settings like those on hydrogenaudio src chart.
 
 Forked repo readme follows.
 _______________
