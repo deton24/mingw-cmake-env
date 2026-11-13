@@ -2,6 +2,8 @@ In Actions there should be artefact built for AVX2 CPUs and Windows x64 with the
 
 Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)
 
+In Actons workflows you ahave non-AVX2 option to possible build if you fork this repo. 
+
 _______________
 # About
 
