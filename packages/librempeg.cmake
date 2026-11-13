@@ -29,6 +29,7 @@ ExternalProject_Add(
           vulkan-loader
           x264
           x265
+          zlib
   GIT_REPOSITORY https://github.com/librempeg/librempeg.git
   GIT_TAG 0ada1735571528a47634d19d213d28eb49e01285
   UPDATE_COMMAND ""
