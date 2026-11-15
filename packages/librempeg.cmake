@@ -31,7 +31,7 @@ ExternalProject_Add(
           x265
           zlib
   GIT_REPOSITORY https://github.com/librempeg/librempeg.git
-  GIT_TAG bbb42146c
+  GIT_TAG d8f501d4e98d3964cbf40cac870fa33f6abfc3ce
   UPDATE_COMMAND ""
   CONFIGURE_COMMAND
     ${EXEC} <SOURCE_DIR>/configure
