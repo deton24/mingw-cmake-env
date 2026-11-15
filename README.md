@@ -3,11 +3,11 @@ The fork is modified to build it in Actions on GH, and then attach in Releases.
 
 Download the from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)<br>
 
-The last commit from 2026 consumes more memory than the one from 2025 ([more](https://github.com/deton24/mingw-cmake-env/tree/low-memory-2025)). In the other branch, there's May 2026 later built still using less RAM (almost the last before the higher memory usage transition).
+But this last commit from 2026 consumes more memory than the one from 2025 ([more](https://github.com/deton24/mingw-cmake-env/tree/low-memory-2025)) and the one from May 2026 I'm yet to test (in the other branch), The May 2026 later built still should use less RAM (almost the last commit before the higher memory usage transition), but should has some improvements over the 2025 build which was tested working before (precisely the one built originally from the original repo before - here I simply use the same commit using version flag on compiled FFmpeg binary)?
 
 It has only deleted fdk-aac (so it's redistributable) and non-FFmpeg stuff (and no external video codecs/filter in separate packages). 
 
-So this forked repository doesn't store ffmpeg source code, it has only modifications to build specific commit of librempeg repo.
+SO this forked repository doesn't store ffmpeg source code, it has only modifications to build specific commit of librempeg repo.
 It was made, because the rorgoroth/mingw-cmake-env repo automatically overwrites old builds in releases, and old actions are also deleted.
 
 You also have non-AVX2 variant. The light workflow has no external video codecs/filters (so it compiles faster, but demuxing audio from video files should still work; no other performance benefit). The main full workflow is called "build". But even non-AVX2 builds will probably have similar performance with:
