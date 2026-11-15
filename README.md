@@ -15,6 +15,10 @@ Very high resampler settings (like those top ones on hydrogenaudio src chart), p
 
 <code>ffmpeg -i "C:\input64_88_96or48.wav" -af asf2sf=dblp,ardftsrc=44100:quality=61656210:bandwidth=0.9941249 -c:a pcm_f32le C:\output44.wav<code>
 
+The last commit with ardftsrc consuming less memory (around 10GB less on 3-4 minutes song) is d8f501d4e98d3964cbf40cac870fa33f6abfc3ce (not compiled here yet). Probably it will behave better
+
+Ma on już wszystkie majowe poprawki ardftsrc — w tym parzysty factor, poprawkę tr_nb_samples, poprawki EOF pts, wsparcie long double - a jeszcze używa starego, lekkiego pamięciowo drzewa fft_pfa_ns_double_c
+
 Forked repo readme follows.
 _______________
 # About
