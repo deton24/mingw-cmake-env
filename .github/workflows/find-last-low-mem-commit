@@ -1,0 +1,22 @@
+name: find-regression-commit
+
+on:
+  workflow_dispatch:
+
+jobs:
+  git-log:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Clone librempeg and print git log
+        run: |
+          git clone https://github.com/librempeg/librempeg.git
+          cd librempeg
+          echo "=== COMMITS ==="
+          git log --stat bbb42146c..0ada1735571528a47634d19d213d28eb49e01285 -- libavfilter/af_ardftsrc.c "libavutil/tx*"
+          git log -p bbb42146c..0ada1735571528a47634d19d213d28eb49e01285 -- libavfilter/af_ardftsrc.c "libavutil/tx*" > ../tx-diff.txt
+
+      - name: Upload full diff
+        uses: actions/upload-artifact@v6
+        with:
+          name: tx-diff
+          path: tx-diff.txt
