@@ -1,3 +1,5 @@
+Experimental branch (probably not compilable yet or maybe only the light workflows without video filters).
+___
 The last commit from 2025 I used successfuly so far ([bbb42146c](https://github.com/librempeg/librempeg/commit/bbb42146c)) with still ardftsrc (which was deleted in [ac8be5eec3153c6ef49c734bdebcd7ba05db2188](https://github.com/librempeg/librempeg/commit/ac8be5eec3153c6ef49c734bdebcd7ba05db2188)) and still with less memory usage.
 The fork is modified to build it in Actions on GH, and then attach in Releases.
 
