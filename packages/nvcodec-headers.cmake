@@ -1,7 +1,7 @@
 ExternalProject_Add(
   nvcodec-headers
   GIT_REPOSITORY https://github.com/FFmpeg/nv-codec-headers.git
-  GIT_SHALLOW 1
+  GIT_TAG n13.0.19.0
   UPDATE_COMMAND ""
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
