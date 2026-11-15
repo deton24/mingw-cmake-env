@@ -6,8 +6,7 @@ Download the artefact from: [Releases](https://github.com/deton24/mingw-cmake-en
 It has only deleted fdk-aac (so it's redistributable) and non-FFmpeg stuff. 
 
 So this forked repository doesn't store ffmpeg source code, it has only modifications to build specific commit of librempeg repo.
-It was made, because the rorgoroth/mingw-cmake-env repo automatically overwrites old builds in releases, and old actions are also deleted
-(compiling "build" and "build for non-AVX2 CPUs" in this 2025 branch broken for now).
+It was made, because the rorgoroth/mingw-cmake-env repo automatically overwrites old builds in releases, and old actions are also deleted.
 
 In Actons workflows you also have non-AVX2 option to possible build if you fork this repo. The light workflow has no external video codecs/filters (so it compiles faster, but demuxing audio from video files should still work). Only the main full workflow "build" replaces itself in releases after creating a new artefact. Non-AVX2 builds will probably have similar performance with:
 
@@ -15,7 +14,7 @@ Very high resampler settings (like those top ones on hydrogenaudio src chart), p
 
 <code>ffmpeg -i "C:\input64_88_96or48.wav" -af asf2sf=dblp,ardftsrc=44100:quality=61656210:bandwidth=0.9941249 -c:a pcm_f32le C:\output44.wav<code>
 
-The last commit with ardftsrc consuming less memory (around 10GB less on 3-4 minutes song than the last build with ardftsrc) is d8f501d4e98d3964cbf40cac870fa33f6abfc3ce (not compiled here yet). Probably it will behave better
+The last commit with ardftsrc consuming less memory (around 10GB less on 3-4 minutes song than the last build with ardftsrc) is d8f501d4e98d3964cbf40cac870fa33f6abfc3ce (72c7ce3d5d56dfbde0e462054dc5ed84add7690e being compilable from a bit earlier). Probably it will behave better.
 
 It has all ardftsrc fixes — even factor, fix in tr_nb_samples, fix in EOF pts, long double support - and still uses low memory consuming tree fft_pfa_ns_double_c
 
