@@ -3,7 +3,7 @@ The fork is modified to build it in Actions on GH, and then attach in Releases.
 
 Download the from: [Releases](https://github.com/deton24/mingw-cmake-env/releases)<br>
 
-The commit from 2026 consumes more memory than the one from 2025 ([more](https://github.com/deton24/mingw-cmake-env/tree/low-memory-2025)).
+The last commit from 2026 consumes more memory than the one from 2025 ([more](https://github.com/deton24/mingw-cmake-env/tree/low-memory-2025)). In the other branch, there's May 2026 later built still using less RAM (almost the last before the higher memory usage transition).
 
 It has only deleted fdk-aac (so it's redistributable) and non-FFmpeg stuff (and no external video codecs/filter in separate packages). 
 
