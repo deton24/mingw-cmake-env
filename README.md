@@ -17,7 +17,7 @@ Very high resampler settings (like those top ones on hydrogenaudio src chart), p
 
 The last commit with ardftsrc consuming less memory (around 10GB less on 3-4 minutes song than the last build with ardftsrc) is d8f501d4e98d3964cbf40cac870fa33f6abfc3ce (not compiled here yet). Probably it will behave better
 
-Ma on już wszystkie majowe poprawki ardftsrc — w tym parzysty factor, poprawkę tr_nb_samples, poprawki EOF pts, wsparcie long double - a jeszcze używa starego, lekkiego pamięciowo drzewa fft_pfa_ns_double_c
+It has all ardftsrc fixes — even factor, fix in tr_nb_samples, fix in EOF pts, long double support - and still uses low memory consuming tree fft_pfa_ns_double_c
 
 Forked repo readme follows.
 _______________
